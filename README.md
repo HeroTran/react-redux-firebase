@@ -1,6 +1,6 @@
 
 This is project use firebase google make database
-https://console.firebase.google.com/u/0/project/addressvietnam-ea550/database/data/
+https://console.firebase.google.com
 
 In the project directory, you can run:
 ### `npm install`
