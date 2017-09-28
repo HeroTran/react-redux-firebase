@@ -1,0 +1,38 @@
+.Address-header{
+	margin-bottom: 40px;
+}
+.Address-title{
+	text-align: center;
+}
+.btn-address{
+	margin-right: 20px;
+}
+.Address-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.Address-content h1{
+	color: red;
+}
+.Address-form-add{
+	padding-bottom: 100px;
+}
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+  }
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
+  
+  .fadeIn {
+	animation-name: fadeIn;
+  }
