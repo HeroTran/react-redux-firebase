@@ -8,6 +8,7 @@ import './Address.css';
 
   
 const createMarkup = (value) => ({__html: value});
+
 export default class Address extends React.Component {
    
  constructor(props){
@@ -34,7 +35,20 @@ export default class Address extends React.Component {
 
  
   handleClickAddNew = () =>{
-      this.setState({isShow: true,isAdd:true,isCheck:true,isSuccess:false,isAddGoogle:false})
+      this.setState({
+          isShow: true,
+          isAdd:true,
+          isCheck:true,
+          isSuccess:false,
+          isAddGoogle:false,
+          streetName:"",
+          ward : "",
+          city : "",
+          country : "",
+          district : "",
+          center: {lat: 10.781663, lng: 106.6742103}
+
+        })
       $("html, body").animate({ scrollTop: $(".Address-form-add").offset().top }, 500);
   }
   handleClickClose = () =>{
@@ -297,3 +311,4 @@ export default class Address extends React.Component {
     
   }
 }
+
