@@ -4,16 +4,16 @@ class utility{
         
         var check = true;
         var error = "";
-        if(street.trim("").length == 0){
+        if(street.trim("").length === 0){
             check = false;
-            error += "street is always required </br> ";
+            error += "street is  required </br> ";
         }
-        if(city.trim("").length == 0){
-            if(ward.trim("").length == 0){
+        if(city.trim("").length === 0){
+            if(ward.trim("").length === 0){
                 check = false;
                 error += "ward is required </br> ";
             }
-            if(district.trim("").length == 0){
+            if(district.trim("").length === 0){
                 check = false;
                 error += "district is required </br> ";
             }
@@ -40,5 +40,30 @@ class utility{
         }
         return csvData;
     }
+    getAddress (latitude, longitude) {
+    return new Promise(function (resolve, reject) {
+        var request = new XMLHttpRequest();
+
+        var method = 'GET';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
+        var async = true;
+
+        request.open(method, url, async);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    var data = JSON.parse(request.responseText);
+                    var address = data.results[0];
+                    resolve(address);
+                    
+                }
+                else {
+                    reject(request.status);
+                }
+            }
+        };
+        request.send();
+    });
+};
 }
 export default new utility();

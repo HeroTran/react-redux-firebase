@@ -4,7 +4,6 @@ export const initialState = {
     address:[],
     csvData:[],
     Keys:[]
-   
 };
 
 
@@ -39,12 +38,14 @@ export default function AddressReducer(state = initialState, action) {
         editState.address = editState.address || [];
         editState.address = editState.address.slice();
         for(var i=0;i<editState.address.length;i++){
-            if(editState.Keys[i] == action.payload.adKey){
+            if(editState.Keys[i] === action.payload.adKey){
                 editState.address[i].StreetName =  action.payload.editAddress.StreetName;
                 editState.address[i].Ward = action.payload.editAddress.Ward;
                 editState.address[i].District = action.payload.editAddress.District;
                 editState.address[i].City =  action.payload.editAddress.City;
                 editState.address[i].Country = action.payload.editAddress.Country;
+                editState.address[i].lat = action.payload.editAddress.lat;
+                editState.address[i].lng = action.payload.editAddress.lng;
             }
         }
         editState.csvData = utility.handleConvertDataToCSV(editState.address);

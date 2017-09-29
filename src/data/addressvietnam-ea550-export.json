@@ -4,8 +4,10 @@
   	  "City" : "Ho Chi Minh city",
 			"Country" : "Vietnam",
 			"District" : "District 1",
+			"Ward" : "Ben Nghe ward",
 			"StreetName" : "72 Le Thanh Ton",
-			"Ward" : "Ben Nghe ward"
+			"lat":10.7775851,
+			"lng":106.6996137
     }
   }
 }

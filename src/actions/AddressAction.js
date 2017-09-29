@@ -53,7 +53,9 @@ export function addToAddress(objectAdress) {
         "Ward" : objectAdress.Ward,
         "District" : objectAdress.District,
         "City" : objectAdress.City,
-        "Country" : objectAdress.Country
+        "Country" : objectAdress.Country,
+        "lat":objectAdress.lat,
+        "lng":objectAdress.lng
     })
     .then((data) => {
         console.log(data);
@@ -103,7 +105,9 @@ export function editToAddress(objectAdress,adKey) {
         "Ward" : objectAdress.Ward,
         "District" : objectAdress.District,
         "City" : objectAdress.City,
-        "Country" : objectAdress.Country
+        "Country" : objectAdress.Country,
+        "lat":objectAdress.lat,
+        "lng":objectAdress.lng
     })
     .then((data) => {
         console.log(data);
@@ -141,3 +145,7 @@ export function editToAddressFailed(isFailed) {
         payload: isFailed
     };
 }
+
+
+
+
